@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const products = [
   {
-    name: "3004 Post-Op Bra",
+    name: "Waist Training Corset",
     folder: "3004-post-op-bra",
     description: "Post-surgical support and comfort.",
     icon: "♡",
