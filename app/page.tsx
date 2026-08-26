@@ -5,7 +5,7 @@ const products = [
   {
     name: "3004 Post-Op Bra",
     folder: "3004-post-op-bra",
-    image: "/products/3004-post-op-bra/3004-post-op-bra.png"q,
+    image: "/products/3004-post-op-bra/3004-post-op-bra.png",
     description: "Post-surgical support and comfort.",
     icon: "♡",
   },
