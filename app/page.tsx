@@ -1,10 +1,11 @@
 import Image from "next/image";
+import ProductCatalog from "./components/ProductCatalog";
 
 const products = [
   {
     name: "3004 Post-Op Bra",
     folder: "3004-post-op-bra",
-    image: "/products/3004-post-op-bra/3004-post-op-bra-2.png",
+    image: "/products/3004-post-op-bra/3004-post-op-bra.png"q,
     description: "Post-surgical support and comfort.",
     icon: "♡",
   },
@@ -535,41 +536,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
-
-            {products.map((product) => (
-              <div
-                key={product.name}
-                className="group rounded-3xl border border-[#eadde0] bg-[#fffaf9] p-8 transition hover:-translate-y-1 hover:shadow-lg"
-              >
-                <div className="relative mb-6 overflow-hidden rounded-2xl bg-white">
-                  <Image
-                    src={product.image}
-                    alt={product.name}
-                    width={600}
-                    height={600}
-                    className="h-64 w-full object-contain transition duration-300 group-hover:scale-105"
-                  />
-                </div>
-
-                <h3 className="mt-6 text-xl font-semibold">
-                  {product.name}
-                </h3>
-
-                <p className="mt-3 leading-7 text-[#6d5b61]">
-                  {product.description}
-                </p>
-
-                <a
-                  href="#contact"
-                  className="mt-6 inline-block font-semibold text-[#901a8c] hover:underline"
-                >
-                  Explore →
-                </a>
-              </div>
-            ))}
-
-          </div>
+          <ProductCatalog products={products} />
         </div>
       </section>
 
