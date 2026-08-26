@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import Image from "next/image";
 
 type Product = {
@@ -23,7 +23,10 @@ const categories = [
   "Beauty & Care",
 ] as const;
 
+const sortOptions = ["Default", "Name A–Z", "Name Z–A"] as const;
+
 type Category = (typeof categories)[number];
+type SortOption = (typeof sortOptions)[number];
 
 const beautyAndCareFolders = new Set([
   "benjabelle-brush-tree",
@@ -86,17 +89,29 @@ function getCategories(product: Product): Category[] {
 export default function ProductCatalog({ products }: Props) {
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState<Category>("All");
+  const [sort, setSort] = useState<SortOption>("Default");
 
-  const filteredProducts = products.filter((product) => {
-    const matchesSearch =
-      product.name.toLowerCase().includes(search.toLowerCase()) ||
-      product.description.toLowerCase().includes(search.toLowerCase());
+  const filteredProducts = useMemo(() => {
+    const matchingProducts = products.filter((product) => {
+      const matchesSearch =
+        product.name.toLowerCase().includes(search.toLowerCase()) ||
+        product.description.toLowerCase().includes(search.toLowerCase());
 
-    const matchesCategory =
-      category === "All" || getCategories(product).includes(category);
+      const matchesCategory =
+        category === "All" || getCategories(product).includes(category);
 
-    return matchesSearch && matchesCategory;
-  });
+      return matchesSearch && matchesCategory;
+    });
+
+    if (sort === "Default") {
+      return matchingProducts;
+    }
+
+    return [...matchingProducts].sort((a, b) => {
+      const comparison = a.name.localeCompare(b.name);
+      return sort === "Name A–Z" ? comparison : -comparison;
+    });
+  }, [category, products, search, sort]);
 
   return (
     <section className="w-full">
@@ -132,7 +147,7 @@ export default function ProductCatalog({ products }: Props) {
         </div>
       </div>
 
-      <div className="mb-5 flex items-center justify-between">
+      <div className="mb-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-sm text-gray-500">
           Showing{" "}
           <span className="font-semibold text-gray-800">
@@ -140,6 +155,21 @@ export default function ProductCatalog({ products }: Props) {
           </span>{" "}
           products
         </p>
+
+        <label className="flex items-center gap-2 text-sm text-gray-500">
+          <span className="whitespace-nowrap">Sort by</span>
+          <select
+            value={sort}
+            onChange={(e) => setSort(e.target.value as SortOption)}
+            className="rounded-full border border-gray-200 bg-white px-3 py-2 text-sm font-medium text-gray-700 outline-none transition focus:border-[#901a8c] focus:ring-2 focus:ring-[#901a8c]/10"
+          >
+            {sortOptions.map((option) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
+        </label>
       </div>
 
       {filteredProducts.length === 0 ? (
