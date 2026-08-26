@@ -60,14 +60,14 @@ const products = [
   {
     name: "Benjabelle Brush Tree",
     folder: "benjabelle-brush-tree",
-    image: "/products/benjabelle-brush-tree/benjabelle-brush-tree.png",
+    image: "/products/benjabelle-brush-tree/benjabelle-brush-tree-pink.png",
     description: "Keep your beauty brushes organised and accessible.",
     icon: "◊",
   },
   {
     name: "Breast Band",
     folder: "breast-band",
-    image: "/products/breast-band/breast-band.png",
+    image: "/products/breast-band/breast-band-1.png",
     description: "Supportive band designed for post-surgical care.",
     icon: "♡",
   },
@@ -102,7 +102,7 @@ const products = [
   {
     name: "Corset Liner",
     folder: "corset-liner",
-    image: "/products/corset-liner/corset-liner.png",
+    image: "/products/corset-liner/corset-liner-1.png",
     description: "Comfortable protection and support under your corset.",
     icon: "◊",
   },
@@ -116,14 +116,14 @@ const products = [
   {
     name: "Face Faja",
     folder: "face-faja",
-    image: "/products/face-faja/face-faja.png",
+    image: "/products/face-faja/face-faja-front.png",
     description: "Targeted compression and support for the face.",
     icon: "✦",
   },
   {
     name: "Faja shapewear panty luxury for women",
     folder: "faja-panty-luxury",
-    image: "/products/faja-panty-luxury/faja-shapewear-panty-luxury-for-women.png",
+    image: "/products/faja-panty-luxury/faja-shapewear-panty-luxury-for-women-front.png",
     description: "Smooth shaping and comfortable support.",
     icon: "◊",
   },
@@ -158,7 +158,7 @@ const products = [
   {
     name: "High Waist Shorts With Snaps",
     folder: "high-waist-shorts-with-snaps",
-    image: "/products/high-waist-shorts-with-snaps/high-waist-shorts-with-snaps.png",
+    image: "/products/high-waist-shorts-with-snaps/high-waist-shorts-with-snaps-front.png",
     description: "High-waist shaping with convenient snap closure.",
     icon: "✦",
   },
@@ -228,14 +228,14 @@ const products = [
   {
     name: "Latex waist cincher 3 hooks for women",
     folder: "latex-waist-cincher-3-hooks",
-    image: "/products/latex-waist-cincher-3-hooks/latex-waist-cincher-3-hooks-for-women-2.png",
+    image: "/products/latex-waist-cincher-3-hooks/latex-waist-cincher-3-hooks-for-women-front.png",
     description: "Firm waist compression with three-hook adjustment.",
     icon: "◊",
   },
   {
     name: "Loofah Disc Big",
     folder: "loofah-disc-big",
-    image: "/products/loofah-disc-big/loofah-disc-big.png",
+    image: "/products/loofah-disc-big/loofah-disc-big-front.png",
     description: "A practical addition to your body-care routine.",
     icon: "♡",
   },
@@ -361,7 +361,7 @@ const products = [
   {
     name: "Travel Rollup Bag",
     folder: "travel-rollup-bag",
-    image: "/products/travel-rollup-bag/travel-rollup-bag.png",
+    image: "/products/travel-rollup-bag/travel-rollup-bag-1.png",
     description: "Convenient storage for your shapewear and essentials.",
     icon: "♡",
   },
